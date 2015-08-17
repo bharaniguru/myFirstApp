@@ -140,12 +140,24 @@ angular.module('starter', ['ionic', 'ngRoute', 'starter.controllers', 'starter.s
   $routeProvider
     .when('/dashboard',
         {
-            controller: 'DashCtrl',
-            templateUrl: 'templates/dashboard.html'
+            templateUrl: 'templates/dashboard.html',
+            controller: 'DashCtrl'
         })
     .when('/contactForm',
         {
             templateUrl: 'templates/contactForm.html'
+        })
+    .when('/components',
+        {
+            templateUrl: 'templates/components.html'
+        })
+    .when('/login',
+        {
+            templateUrl: 'templates/login.html'
+        })
+    .when('/signUp',
+        {
+            templateUrl: 'templates/signUp.html'
         })
   .otherwise('/dashboard');
 
