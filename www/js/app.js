@@ -151,15 +151,12 @@ angular.module('starter', ['ionic', 'ngRoute', 'starter.controllers', 'starter.s
         {
             templateUrl: 'templates/components.html'
         })
-    .when('/login',
+    .when('/gallery',
         {
-            templateUrl: 'templates/login.html'
+            templateUrl: 'templates/gallery.html',
+            controller: 'DashCtrl'
         })
-    .when('/signUp',
-        {
-            templateUrl: 'templates/signUp.html'
-        })
-  .otherwise('/dashboard');
+    .otherwise('/dashboard');
 
 }]);
 //});
