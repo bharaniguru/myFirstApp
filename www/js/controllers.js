@@ -1,9 +1,9 @@
 angular.module('starter.controllers', ["oc.lazyLoad",'ngRoute'])
 
 .controller('DashCtrl', function($scope,$ocLazyLoad) {
-        $ocLazyLoad.load("assets/js/charts.js");
-        $ocLazyLoad.load("assets/js/flot-charts/curved-line-chart.js");
-        $ocLazyLoad.load("assets/js/functions.js");
+        //$ocLazyLoad.load("assets/js/charts.js");
+        //$ocLazyLoad.load("assets/js/flot-charts/curved-line-chart.js");
+        //$ocLazyLoad.load("assets/js/functions.js");
         //$ocLazyLoad.load("js/charts.js").then(function() {
         //  console.log('loaded!!');
         //})
@@ -14,6 +14,9 @@ angular.module('starter.controllers', ["oc.lazyLoad",'ngRoute'])
   //
   
   })
+//.controller('galleryCtrl', function($scope,$ocLazyLoad) {
+//        $ocLazyLoad.load("assets/js/functions.js");
+//  })
 
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called

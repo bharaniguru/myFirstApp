@@ -145,11 +145,13 @@ angular.module('starter', ['ionic', 'ngRoute', 'starter.controllers', 'starter.s
         })
     .when('/contactForm',
         {
-            templateUrl: 'templates/contactForm.html'
+            templateUrl: 'templates/contactForm.html',
+            controller: 'DashCtrl'
         })
     .when('/components',
         {
-            templateUrl: 'templates/components.html'
+            templateUrl: 'templates/components.html',
+            controller: 'DashCtrl'
         })
     .when('/gallery',
         {
