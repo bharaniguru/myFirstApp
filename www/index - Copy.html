@@ -5,7 +5,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
-    
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <!-- Vendor CSS -->
     <link href="assets/vendors/bower_components/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
@@ -17,51 +17,18 @@
     <!-- CSS -->
     <link href="assets/css/app.min.1.css" rel="stylesheet">
     <link href="assets/css/app.min.2.css" rel="stylesheet">
-    <!--<link href="lib/ionic/css/ionic.css" rel="stylesheet">-->
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
-    <!-- Javascript Libraries -->
-    <script src="assets/vendors/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="assets/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     
-    <script src="assets/vendors/bower_components/flot/jquery.flot.js"></script>
-    <script src="assets/vendors/bower_components/flot/jquery.flot.resize.js"></script>
-    <script src="assets/vendors/bower_components/flot.curvedlines/curvedLines.js"></script>
-    <script src="assets/vendors/sparklines/jquery.sparkline.min.js"></script>
-    <script src="assets/vendors/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
-    
-    <script src="assets/vendors/bower_components/moment/min/moment.min.js"></script>
-    <script src="assets/vendors/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
-    <script src="assets/vendors/bower_components/simpleWeather/jquery.simpleWeather.min.js"></script>
-    <script src="assets/vendors/bower_components/jquery.nicescroll/jquery.nicescroll.min.js"></script>
-    <script src="assets/vendors/bower_components/Waves/dist/waves.min.js"></script>
-    <script src="assets/vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
-    <script src="assets/vendors/bower_components/sweetalert/dist/sweetalert.min.js"></script>
-    
-    <!-- Placeholder for IE9 -->
-    <!--[if IE 9 ]>
-        <script src="assets/vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
-    <![endif]-->
-    
-    <script src="assets/js/flot-charts/curved-line-chart.js"></script>
-    <script src="assets/js/flot-charts/line-chart.js"></script>
-    <script src="assets/js/charts.js"></script>
-    
-    <script src="assets/js/functions.js"></script>
-    <script src="assets/js/demo.js"></script>
     
     
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.7/angular.js"></script>-->
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
-    <script src="lib/ionic/js/angular-ui/angular-ui-router.js"></script>
-    <!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>-->
-    <script src="https://code.angularjs.org/1.4.4/angular-touch.js"></script>
-    
-    <script src="lib/ocLazyLoad/ocLazyLoad.js"></script>
+    <!--<script src="lib/ionic/js/angular/angular.js"></script>-->
+    <!--<script src="lib/ionic/js/angular-ui/angular-ui-router.js"></script>-->
+    <script src="https://code.angularjs.org/1.3.5/angular-route.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
@@ -70,17 +37,12 @@
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
-    
-    
-    
     </head>
-  <!--ng-controller="DashCtrl"-->
+    <!--<body ng-app="starter" ng-controller="DashCtrl">-->
     <body ng-app="starter">
-        <!--<body ng-controller="DashCtrl" ng-app="starter">-->
     <!--
       The nav bar that will be updated as we navigate between views.
     -->
-    
     <header id="header">
         <ul class="header-inner">
             <li id="menu-trigger" data-trigger="#sidebar">
@@ -334,19 +296,13 @@
                 </ul>
             </li>
         </ul>
-    
+        
         <!-- Top Search Content -->
         <div id="top-search-wrap">
             <input type="text">
             <i id="top-search-close">&times;</i>
         </div>
     </header>
-    
-    <!--
-      The views will be rendered in the <ion-nav-view> directive below
-      Templates are in the /templates folder (but you could also
-      have templates inline in this html file if you'd like).
-    -->
     <section id="main">
         <aside id="sidebar">
             <div class="sidebar-inner c-overflow">
@@ -380,14 +336,66 @@
                 </div>
 
                 <ul class="main-menu">
-                    <li class="active"><a href="#dashboard"><i class="md md-home"></i> Dashboard</a></li>
-                    <li><a href="#contactForm"><i class="md md-format-underline"></i> Contact Form</a></li>
+                    <li class="active"><a href="index-2.html"><i class="md md-home"></i> Home</a></li>
+                    <li><a href="typography.html"><i class="md md-format-underline"></i> Typography</a></li>
                     <li class="sub-menu">
                         <a href="#"><i class="md md-now-widgets"></i> Widgets</a>
 
                         <ul>
                             <li><a href="widget-templates.html">Templates</a></li>
                             <li><a class="active" href="widgets.html">Widgets</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="#"><i class="md md-view-list"></i> Tables</a>
+
+                        <ul>
+                            <li><a href="tables.html">Normal Tables</a></li>
+                            <li><a href="data-tables.html">Data Tables</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="#"><i class="md md-my-library-books"></i> Forms</a>
+
+                        <ul>
+                            <li><a href="form-elements.html">Basic Form Elements</a></li>
+                            <li><a href="form-components.html">Form Components</a></li>
+                            <li><a href="form-examples.html">Form Examples</a></li>
+                            <li><a href="form-validations.html">Form Validation</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="#"><i class="md md-swap-calls"></i>User Interface</a>
+                        <ul>
+                            <li><a href="colors.html">Colors</a></li>
+                            <li><a href="animations.html">Animations</a></li>
+                            <li><a href="box-shadow.html">Box Shadow</a></li>
+                            <li><a href="buttons.html">Buttons</a></li>
+                            <li><a href="icons.html">Icons</a></li>
+                            <li><a href="alerts.html">Alerts</a></li>
+                            <li><a href="notification-dialog.html">Notifications & Dialogs</a></li>
+                            <li><a href="media.html">Media</a></li>
+                            <li><a href="components.html">Components</a></li>
+                            <li><a href="other-components.html">Others</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="#"><i class="md md-trending-up"></i>Charts</a>
+                        <ul>
+                            <li><a href="flot-charts.html">Flot Charts</a></li>
+                            <li><a href="other-charts.html">Other Charts</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="calendar.html"><i class="md md-today"></i> Calendar</a></li>
+                    <li><a href="generic-classes.html"><i class="md md-layers"></i> Generic Classes</a></li>
+                    <li class="sub-menu">
+                        <a href="#"><i class="md md-content-copy"></i> Sample Pages</a>
+                        <ul>
+                            <li><a href="profile-about.html">Profile</a></li>
+                            <li><a href="list-view.html">List View</a></li>
+                            <li><a href="messages.html">Messages</a></li>
+                            <li><a href="login.html">Login and Sign Up</a></li>
+                            <li><a href="404.html">Error 404</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -554,66 +562,69 @@
                 </div>
             </div>
         </aside>
-        
-        <section id="content" >
+        <section id="content">
             <div class="container">
-                
-                <!--<ion-nav-view>
-                    
-                </ion-nav-view>-->
-            <div ng-view></div>
-            
-<!--<div ng-show="showActions" ng-swipe-right="showActions = false">
-  <button ng-click="reply()">Reply</button>
-  <button ng-click="delete()">Delete</button>
-</div>-->
-
-
-
-<script>
-//angular.module('ngSwipeLeftExample', ['ngTouch']);
-</script>
-
+                <ion-nav-view></ion-nav-view>
+                <!--<div ng-view></div>-->
             </div>
         </section>
     </section>
-<script>
-    var mainApp = angular.module("mainApp", ['ngRoute']);
-      
-      mainApp.config(['$routeProvider',
-         function($routeProvider) {
-            $routeProvider.
-               when('/dashboard', {
-                  templateUrl: 'templates/dashboard.html',
-                  //controller: 'DashCtrl'
-               }).
-               when('/contactForm', {
-                  templateUrl: 'templates/contactForm.html',
-                  
-               }).
-               otherwise({
-                  redirectTo: '/dashboard'
-               });
-         }]);
-
-         
     
-            //angular.module("LazyLoadTest", ["oc.lazyLoad"])
-            //    .controller("TestController", function($scope, $ocLazyLoad, $compile) {
-            //        $ocLazyLoad.load("js/testApp.js").then(function() {
-            //            console.log('loaded!!');
-            //            var el, elToAppend;
-            //            elToAppend = $compile('<say-hello to="world"></say-hello>')($scope);
-            //            el = angular.element('#example');
-            //            el.append(elToAppend);
-            //        }, function(e) {
-            //            console.log('errr');
-            //            console.error(e);
-            //        })
-            //    });
-            
-            
-
-        </script>
+        
+        
+    
+    <!--<ul>
+    <li ng-repeat="phone in phones">
+      <span>{{phone.name}}</span>
+      <p>{{phone.snippet}}</p>
+    </li>
+  </ul>-->
+    <!--<section id="content">
+        <div class="container">
+            <div ng-view></div>
+        </div>
+    </section>-->
+   
+    <!--<ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+    </ion-nav-bar>-->
+    <!--
+      The views will be rendered in the <ion-nav-view> directive below
+      Templates are in the /templates folder (but you could also
+      have templates inline in this html file if you'd like).
+    -->
+    <!--<ion-nav-view></ion-nav-view>-->
+    <!--<ng-view></ng-view>-->
+    <!-- Javascript Libraries -->
+    <script src="assets/vendors/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="assets/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    
+    <script src="assets/vendors/bower_components/flot/jquery.flot.js"></script>
+    <script src="assets/vendors/bower_components/flot/jquery.flot.resize.js"></script>
+    <script src="assets/vendors/bower_components/flot.curvedlines/curvedLines.js"></script>
+    <script src="assets/vendors/sparklines/jquery.sparkline.min.js"></script>
+    <script src="assets/vendors/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
+    
+    <script src="assets/vendors/bower_components/moment/min/moment.min.js"></script>
+    <script src="assets/vendors/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+    <script src="assets/vendors/bower_components/simpleWeather/jquery.simpleWeather.min.js"></script>
+    <script src="assets/vendors/bower_components/jquery.nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="assets/vendors/bower_components/Waves/dist/waves.min.js"></script>
+    <script src="assets/vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
+    <script src="assets/vendors/bower_components/sweetalert/dist/sweetalert.min.js"></script>
+    
+    <!-- Placeholder for IE9 -->
+    <!--[if IE 9 ]>
+        <script src="assets/vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+    <![endif]-->
+    
+    <script src="assets/js/flot-charts/curved-line-chart.js"></script>
+    <script src="assets/js/flot-charts/line-chart.js"></script>
+    <script src="assets/js/charts.js"></script>
+    
+    <script src="assets/js/charts.js"></script>
+    <script src="assets/js/functions.js"></script>
+    <script src="assets/js/demo.js"></script>
   </body>
 </html>
