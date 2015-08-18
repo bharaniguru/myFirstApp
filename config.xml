@@ -8,6 +8,7 @@
       BharaniGuru R First App
     </author>
   <content src="index.html"/>
+  <gap:plugin name="org.apache.cordova.geolocation" />
   <access origin="*"/>
   
   <preference name="webviewbounce" value="false"/>
