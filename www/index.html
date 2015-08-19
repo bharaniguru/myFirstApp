@@ -4,12 +4,13 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Material Admin</title>
+        <title>Guru Apps</title>
         
         <!-- Vendor CSS -->
         <link href="assets/vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
         <link href="assets/vendors/bower_components/material-design-iconic-font/css/material-design-iconic-font.min.css" rel="stylesheet">
-            
+        <link href="assets/vendors/formValidation/css/formValidation.css" rel="stylesheet" />
+        
         <!-- CSS -->
         <link href="assets/css/app.min.1.css" rel="stylesheet">
         <link href="assets/css/app.min.2.css" rel="stylesheet">
@@ -54,39 +55,40 @@
         
         <!-- Register -->
         <div class="lc-block" id="l-register"  ng-controller="studentController">
-            <div class="input-group m-b-20">
-                <span class="input-group-addon"><i class="md md-person"></i></span>
-                <div class="fg-line">
-                    <input ng-model="username" type="text" class="form-control" placeholder="Username">
+            <form id="signUpForm" >
+                <div class="input-group m-b-20">
+                    <span class="input-group-addon"><i class="md md-person"></i></span>
+                    <div class="fg-line">
+                        <input ng-model="username" name="username" type="text" class="form-control" placeholder="Username">
+                    </div>
                 </div>
-            </div>
-            
-            <div class="input-group m-b-20">
-                <span class="input-group-addon"><i class="md md-mail"></i></span>
-                <div class="fg-line">
-                    <input ng-model="emailAddress" type="text" class="form-control" placeholder="Email Address">
+                
+                <div class="input-group m-b-20">
+                    <span class="input-group-addon"><i class="md md-mail"></i></span>
+                    <div class="fg-line">
+                        <input ng-model="emailAddress" name="emailAddress" type="text" class="form-control" placeholder="Email Address">
+                    </div>
                 </div>
-            </div>
-            
-            <div class="input-group m-b-20">
-                <span class="input-group-addon"><i class="md md-accessibility"></i></span>
-                <div class="fg-line">
-                    <input ng-model="password" type="password" class="form-control" placeholder="Password">
+                
+                <div class="input-group m-b-20">
+                    <span class="input-group-addon"><i class="md md-accessibility"></i></span>
+                    <div class="fg-line">
+                        <input ng-model="password" name="password" type="password" class="form-control" placeholder="Password">
+                    </div>
                 </div>
-            </div>
-            
-            <div class="clearfix"></div>
-            
-            <div class="checkbox">
-                <label>
-                    <input ng-model="agreement" type="checkbox" value="">
-                    <i class="input-helper"></i>
-                    Accept the license agreement
-                </label>
-            </div>
-            
-            <a data-ng-click="signUp()" class="btn btn-login btn-danger btn-float"><i class="md md-arrow-forward"></i></a>
-            
+                
+                <div class="clearfix"></div>
+                
+                <div class="checkbox">
+                    <label>
+                        <input ng-model="agreement" type="checkbox" value="">
+                        <i class="input-helper"></i>
+                        Accept the license agreement
+                    </label>
+                </div>
+                <button class="btn btn-login btn-danger btn-float" type="submit" name="saveData"> <i class="md md-arrow-forward"> </button>
+                <!--<a data-ng-click="signUp()" class="btn btn-login btn-danger btn-float"><i class="md md-arrow-forward"></i></a>-->
+            </form>
             <ul class="login-navigation">
                 <li data-block="#l-login" class="bgm-green">Login</li>
                 <li data-block="#l-forget-password" class="bgm-orange">Forgot Password?</li>
@@ -154,7 +156,8 @@
                 <p>Sorry for the inconvenience!</p>
             </div>   
         <![endif]-->
-        <script>
+<script>
+    
             var mainApp = angular.module("mainApp", []);
             mainApp.controller("studentController", function($scope,$http) {
                 
@@ -167,12 +170,28 @@
                         password:$scope.password,
                         emailAddress:$scope.emailAddress
                     }
-                    $http.post("http://localhost/myFirstAppServer/myFirstAppCtrl/addUserDetail",data).success(function(data){
-                        console.log("inserted Successfully");
+                    //$http.post("http://localhost/myFirstAppServer/myFirstAppCtrl/addUserDetail",data).success(function(data){
+                    //    console.log(data);
+                    //});
+                    $http({
+                        method: 'POST',
+                        url: 'http://localhost/myFirstAppServer/myFirstAppCtrl/addUserDetail',
+                        //data: $.param({
+                        //    username: $scope.username,
+                        //    password: $scope.password,
+                        //    emailAddress:$scope.emailAddress
+                        //}),
+                        data:{
+                            username: $scope.username,
+                            password: $scope.password,
+                            emailAddress:$scope.emailAddress },
+                            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+                    }).success(function(data){
+                        console.log(data);
                     });
-                    $http.get("data.txt").success(function(response){
-                        console.log(response);
-                    });
+                    //$http.get("http://localhost/myFirstAppServer/myFirstAppCtrl/addUserDetail").success(function(response){
+                    //    console.log(response);
+                    //});
                 }
             });
         </script>
@@ -181,14 +200,53 @@
         <script src="assets/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
         
         <script src="assets/vendors/bower_components/Waves/dist/waves.min.js"></script>
-        
+        <script src="assets/vendors/formValidation/js/formValidation.js"></script>
+        <script src="assets/vendors/formValidation/js/framework/bootstrap.min.js"></script>
         <!-- Placeholder for IE9 -->
         <!--[if IE 9 ]>
             <script src="assets/vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
         <![endif]-->
         
         <script src="assets/js/functions.js"></script>
-        
+        <script>
+            $(document).ready(function() {
+                $('#signUpForm').formValidation({
+                    //framework: 'bootstrap',
+                    container: 'tooltip',
+                    message: 'This value is not valid',
+                    excluded:[':disabled',':hidden'],
+                    group:'.fg-line',
+                    feedbackIcons: {
+                        valid: 'fa fa-check',
+                        invalid: 'fa fa-times',
+                        validating: 'fa fa-refresh'
+                    },
+                    fields: {
+                        username: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'Username cannot be empty'
+                                }
+                            }
+                        },
+                        password: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'Password cannot be empty'
+                                }
+                            }
+                        },
+                        emailAddress: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'Email cannot be empty'
+                                }
+                            }
+                        }
+                    }
+                });
+            });
+        </script>
     </body>
 
 </html>

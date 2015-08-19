@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ["oc.lazyLoad",'ngRoute'])
+angular.module('starter.controllers', ["oc.lazyLoad",'ngRoute','ngCordova'])
 
 .controller('DashCtrl', function($scope,$ocLazyLoad) {
         //$ocLazyLoad.load("assets/js/charts.js");

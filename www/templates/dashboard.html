@@ -1,5 +1,11 @@
 
 <ion-view>
+    <script>
+        document.addEventListener("deviceready", function () {
+            alert('test Guru');
+  $cordovaPlugin.someFunction().then(success, error);
+}, false);
+    </script>
     <script src="assets/js/flot-charts/curved-line-chart.js"></script>
     <script src="assets/js/flot-charts/line-chart.js"></script>
     <script src="assets/js/charts.js"></script>
